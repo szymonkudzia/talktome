@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>TalkToMe</Name>
+    <RootNamespace>TalkToMe</RootNamespace>
+    <CommandLineArguments />
+    <InterpreterPath />
+    <InterpreterArguments />
+    <DjangoSettingsModule>python.settings</DjangoSettingsModule>
+    <WebBrowserUrl />
+    <WebBrowserPort />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>6c479412-45ca-4b15-9fa0-1a24f3420bc1</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="manage.py" />
+    <Compile Include="python\datamodel\dao\baseDao.py" />
+    <Compile Include="python\datamodel\dao\localizationDao.py" />
+    <Compile Include="python\datamodel\dao\userDao.py" />
+    <Compile Include="python\datamodel\dao\__init__.py" />
+    <Compile Include="python\datamodel\localization.py" />
+    <Compile Include="python\datamodel\user.py" />
+    <Compile Include="python\datamodel\__init__.py" />
+    <Compile Include="python\services.py" />
+    <Compile Include="python\services_impl\baseService.py" />
+    <Compile Include="python\services_impl\localizationService.py" />
+    <Compile Include="python\services_impl\loginService.py" />
+    <Compile Include="python\services_impl\registerService.py" />
+    <Compile Include="python\services_impl\__init__.py" />
+    <Compile Include="python\views.py" />
+    <Compile Include="python\__init__.py" />
+    <Compile Include="python\settings.py" />
+    <Compile Include="python\urls.py" />
+    <Compile Include="python\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebPiReference Include="https://www.microsoft.com/web/webpi/3.0/toolsproductlist.xml%3fDjango">
+      <Feed>https://www.microsoft.com/web/webpi/3.0/toolsproductlist.xml</Feed>
+      <ProductId>Django</ProductId>
+      <FriendlyName>Django 1.4</FriendlyName>
+    </WebPiReference>
+    <WebPiReference Include="https://www.microsoft.com/web/webpi/3.0/toolsproductlist.xml%3fPython27">
+      <Feed>https://www.microsoft.com/web/webpi/3.0/toolsproductlist.xml</Feed>
+      <ProductId>Python27</ProductId>
+      <FriendlyName>Python 2.7</FriendlyName>
+    </WebPiReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="html\" />
+    <Folder Include="html\css\" />
+    <Folder Include="html\css\vendors\" />
+    <Folder Include="html\css\vendors\bootstrap\" />
+    <Folder Include="html\js\" />
+    <Folder Include="html\img\" />
+    <Folder Include="html\js\controllers\" />
+    <Folder Include="html\js\services\" />
+    <Folder Include="html\js\vendors\" />
+    <Folder Include="html\js\vendors\angular\" />
+    <Folder Include="html\js\vendors\angular\docs\" />
+    <Folder Include="html\js\vendors\angular\docs\components\" />
+    <Folder Include="html\js\vendors\angular\docs\components\bootstrap\" />
+    <Folder Include="html\js\vendors\angular\docs\components\bootstrap\css\" />
+    <Folder Include="html\js\vendors\angular\docs\components\bootstrap\img\" />
+    <Folder Include="html\js\vendors\angular\docs\components\bootstrap\js\" />
+    <Folder Include="html\js\vendors\angular\docs\components\font-awesome\" />
+    <Folder Include="html\js\vendors\angular\docs\components\font-awesome\css\" />
+    <Folder Include="html\js\vendors\angular\docs\components\font-awesome\font\" />
+    <Folder Include="html\js\vendors\angular\docs\css\" />
+    <Folder Include="html\js\vendors\angular\docs\img\" />
+    <Folder Include="html\js\vendors\angular\docs\img\guide\" />
+    <Folder Include="html\js\vendors\angular\docs\img\tutorial\" />
+    <Folder Include="html\js\vendors\angular\docs\js\" />
+    <Folder Include="html\js\vendors\angular\docs\notes\" />
+    <Folder Include="html\js\vendors\angular\docs\partials\" />
+    <Folder Include="html\js\vendors\angular\docs\partials\api\" />
+    <Folder Include="html\js\vendors\angular\docs\partials\cookbook\" />
+    <Folder Include="html\js\vendors\angular\docs\partials\error\" />
+    <Folder Include="html\js\vendors\angular\docs\partials\guide\" />
+    <Folder Include="html\js\vendors\angular\docs\partials\misc\" />
+    <Folder Include="html\js\vendors\angular\docs\partials\tutorial\" />
+    <Folder Include="html\js\vendors\angular\i18n\" />
+    <Folder Include="html\js\vendors\bootstrap\" />
+    <Folder Include="html\views\" />
+    <Folder Include="html\views\partials\" />
+    <Folder Include="python\" />
+    <Folder Include="python\datamodel\" />
+    <Folder Include="python\datamodel\dao\" />
+    <Folder Include="python\services_impl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="html\css\styles.less" />
+    <Content Include="html\css\vendors\bootstrap\bootstrap-theme.css" />
+    <Content Include="html\css\vendors\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="html\css\vendors\bootstrap\bootstrap.css" />
+    <Content Include="html\css\vendors\bootstrap\bootstrap.min.css" />
+    <Content Include="html\default.html" />
+    <Content Include="html\js\app.js" />
+    <Content Include="html\js\controllers\LoginCtrl.js" />
+    <Content Include="html\js\services\MainService.js" />
+    <Content Include="html\js\controllers\RegisterCtrl.js" />
+    <Content Include="html\js\services\LocalizationService.js" />
+    <Content Include="html\js\vendors\angular\angular-animate.js" />
+    <Content Include="html\js\vendors\angular\angular-animate.min.js" />
+    <Content Include="html\js\vendors\angular\angular-animate.min.js.map" />
+    <Content Include="html\js\vendors\angular\angular-cookies.js" />
+    <Content Include="html\js\vendors\angular\angular-cookies.min.js" />
+    <Content Include="html\js\vendors\angular\angular-cookies.min.js.map" />
+    <Content Include="html\js\vendors\angular\angular-loader.js" />
+    <Content Include="html\js\vendors\angular\angular-loader.min.js" />
+    <Content Include="html\js\vendors\angular\angular-loader.min.js.map" />
+    <Content Include="html\js\vendors\angular\angular-mocks.js" />
+    <Content Include="html\js\vendors\angular\angular-resource.js" />
+    <Content Include="html\js\vendors\angular\angular-resource.min.js" />
+    <Content Include="html\js\vendors\angular\angular-resource.min.js.map" />
+    <Content Include="html\js\vendors\angular\angular-route.js" />
+    <Content Include="html\js\vendors\angular\angular-route.min.js" />
+    <Content Include="html\js\vendors\angular\angular-route.min.js.map" />
+    <Content Include="html\js\vendors\angular\angular-sanitize.js" />
+    <Content Include="html\js\vendors\angular\angular-sanitize.min.js" />
+    <Content Include="html\js\vendors\angular\angular-sanitize.min.js.map" />
+    <Content Include="html\js\vendors\angular\angular-scenario.js" />
+    <Content Include="html\js\vendors\angular\angular-touch.js" />
+    <Content Include="html\js\vendors\angular\angular-touch.min.js" />
+    <Content Include="html\js\vendors\angular\angular-touch.min.js.map" />
+    <Content Include="html\js\vendors\angular\angular.js" />
+    <Content Include="html\js\vendors\angular\angular.min.js" />
+    <Content Include="html\js\vendors\angular\angular.min.js.map" />
+    <Content Include="html\js\vendors\angular\docs\.htaccess" />
+    <Content Include="html\js\vendors\angular\docs\appcache-offline.manifest" />
+    <Content Include="html\js\vendors\angular\docs\appcache.manifest" />
+    <Content Include="html\js\vendors\angular\docs\components\angular-bootstrap-prettify.js" />
+    <Content Include="html\js\vendors\angular\docs\components\angular-bootstrap.js" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\.bower.json" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\css\bootstrap.css" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\css\bootstrap.min.css" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\js\bootstrap.js" />
+    <Content Include="html\js\vendors\angular\docs\components\bootstrap\js\bootstrap.min.js" />
+    <Content Include="html\js\vendors\angular\docs\components\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="html\js\vendors\angular\docs\components\font-awesome\css\font-awesome.css" />
+    <Content Include="html\js\vendors\angular\docs\components\font-awesome\css\font-awesome.min.css" />
+    <Content Include="html\js\vendors\angular\docs\components\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="html\js\vendors\angular\docs\components\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="html\js\vendors\angular\docs\components\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="html\js\vendors\angular\docs\components\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="html\js\vendors\angular\docs\components\font-awesome\font\FontAwesome.otf" />
+    <Content Include="html\js\vendors\angular\docs\components\google-code-prettify.js" />
+    <Content Include="html\js\vendors\angular\docs\components\jquery.js" />
+    <Content Include="html\js\vendors\angular\docs\components\jquery.min.js" />
+    <Content Include="html\js\vendors\angular\docs\components\lunr.js" />
+    <Content Include="html\js\vendors\angular\docs\components\lunr.min.js" />
+    <Content Include="html\js\vendors\angular\docs\components\marked.js" />
+    <Content Include="html\js\vendors\angular\docs\css\animations.css" />
+    <Content Include="html\js\vendors\angular\docs\css\docs.css" />
+    <Content Include="html\js\vendors\angular\docs\css\doc_widgets.css" />
+    <Content Include="html\js\vendors\angular\docs\css\prettify.css" />
+    <Content Include="html\js\vendors\angular\docs\docs-data.js" />
+    <Content Include="html\js\vendors\angular\docs\docs-scenario.html" />
+    <Content Include="html\js\vendors\angular\docs\docs-scenario.js" />
+    <Content Include="html\js\vendors\angular\docs\favicon.ico" />
+    <Content Include="html\js\vendors\angular\docs\img\angularjs-for-header-only.svg" />
+    <Content Include="html\js\vendors\angular\docs\img\AngularJS-small.png" />
+    <Content Include="html\js\vendors\angular\docs\img\angular_parts.png" />
+    <Content Include="html\js\vendors\angular\docs\img\bullet.png" />
+    <Content Include="html\js\vendors\angular\docs\img\form_data_flow.png" />
+    <Content Include="html\js\vendors\angular\docs\img\glyphicons-halflings-white.png" />
+    <Content Include="html\js\vendors\angular\docs\img\glyphicons-halflings.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\about_model_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\about_view_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\concepts-controller.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\concepts-directive.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\concepts-model.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\concepts-module-injector.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\concepts-runtime.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\concepts-scope.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\concepts-startup.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\concepts-view.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\di_sequence_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\dom_scope_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\hashbang_vs_regular_url.jpg" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\scenario_runner.png" />
+    <Content Include="html\js\vendors\angular\docs\img\guide\simple_scope_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\helloworld.png" />
+    <Content Include="html\js\vendors\angular\docs\img\helloworld_2way.png" />
+    <Content Include="html\js\vendors\angular\docs\img\One_Way_Data_Binding.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\catalog_screen.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\tutorial_00.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\tutorial_00_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\tutorial_02.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\tutorial_03.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\tutorial_04.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\tutorial_07_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\tutorial_08-09_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\tutorial_10-11_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\tutorial\xhr_service_final.png" />
+    <Content Include="html\js\vendors\angular\docs\img\Two_Way_Data_Binding.png" />
+    <Content Include="html\js\vendors\angular\docs\index-debug.html" />
+    <Content Include="html\js\vendors\angular\docs\index-jq-debug.html" />
+    <Content Include="html\js\vendors\angular\docs\index-jq-nocache.html" />
+    <Content Include="html\js\vendors\angular\docs\index-jq.html" />
+    <Content Include="html\js\vendors\angular\docs\index-nocache.html" />
+    <Content Include="html\js\vendors\angular\docs\index.html" />
+    <Content Include="html\js\vendors\angular\docs\js\docs.js" />
+    <Content Include="html\js\vendors\angular\docs\notes\empty.tmp" />
+    <Content Include="html\js\vendors\angular\docs\offline.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.bind.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.bootstrap.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.copy.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.element.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.equals.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.extend.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.forEach.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.fromJson.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.identity.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.IModule.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.injector.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isArray.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isDate.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isDefined.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isElement.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isFunction.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isNumber.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isObject.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isString.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.isUndefined.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.lowercase.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.mock.dump.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.mock.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.mock.inject.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.mock.module.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.mock.TzDate.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.module.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.noop.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.toJson.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.uppercase.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\angular.version.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\AUTO.%24injector.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\AUTO.%24provide.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\AUTO.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\index.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24anchorScroll.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24animate.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24animateProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24cacheFactory.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24compile.directive.Attributes.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24compile.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24compileProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24controller.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24controllerProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24document.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24exceptionHandler.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24filter.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24filterProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24http.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24httpBackend.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24interpolate.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24interpolateProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24interval.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24locale.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24location.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24locationProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24log.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24logProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24parse.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24parseProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24q.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24rootElement.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24rootScope.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24rootScope.Scope.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24rootScopeProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24sce.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24sceDelegate.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24sceDelegateProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24sceProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24templateCache.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24timeout.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.%24window.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_a.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_form.FormController.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_form.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_input.checkbox.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_input.email.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_input.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_input.number.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_input.radio.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_input.text.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_input.url.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngApp.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngBind.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngBindHtml.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngBindTemplate.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngBlur.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngChange.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngChecked.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngClass.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngClassEven.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngClassOdd.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngClick.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngCloak.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngController.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngCopy.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngCsp.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngCut.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngDblclick.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngDisabled.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngFocus.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngForm.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngHide.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngHref.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngIf.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngInclude.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngInit.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngKeydown.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngKeypress.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngKeyup.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngList.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngModel.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngModel.NgModelController.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngMousedown.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngMouseenter.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngMouseleave.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngMousemove.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngMouseover.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngMouseup.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngNonBindable.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngOpen.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngPaste.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngPluralize.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngReadonly.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngRepeat.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngSelected.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngShow.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngSrc.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngSrcset.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngStyle.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngSubmit.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngSwitch.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngTransclude.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_ngValue.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_script.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_select.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.directive_textarea.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_currency.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_date.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_filter.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_json.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_limitTo.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_lowercase.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_number.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_orderBy.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.filter_uppercase.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ng.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngAnimate.%24animate.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngAnimate.%24animateProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngAnimate.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngCookies.%24cookies.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngCookies.%24cookieStore.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngCookies.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMock.%24exceptionHandler.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMock.%24exceptionHandlerProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMock.%24httpBackend.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMock.%24interval.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMock.%24log.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMock.%24timeout.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMock.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMockE2E.%24httpBackend.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngMockE2E.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngResource.%24resource.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngResource.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngRoute.%24route.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngRoute.%24routeParams.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngRoute.%24routeProvider.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngRoute.directive_ngView.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngRoute.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngSanitize.%24sanitize.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngSanitize.filter_linky.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngSanitize.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngTouch.%24swipe.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngTouch.directive_ngClick.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngTouch.directive_ngSwipeLeft.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngTouch.directive_ngSwipeRight.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\api\ngTouch.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\cookbook\advancedform.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\cookbook\buzz.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\cookbook\deeplinking.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\cookbook\form.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\cookbook\helloworld.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\cookbook\index.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\cookbook\mvc.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24animate_notcsel.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24cacheFactory_iid.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_ctreq.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_iscp.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_multidir.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_nodomevents.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_nonassign.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_selmulti.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_tpload.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_tplrt.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24compile_uterdir.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24controller_noscp.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24httpBackend_noxhr.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24injector_cdep.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24injector_itkn.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24injector_modulerr.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24injector_nomod.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24injector_pget.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24injector_unpr.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24interpolate_interr.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24interpolate_noconcat.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24location_ihshprfx.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24location_ipthprfx.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24location_isrcharg.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24parse_isecdom.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24parse_isecfld.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24parse_isecfn.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24parse_isecwindow.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24parse_lexerr.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24parse_syntax.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24parse_ueoe.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24resource_badargs.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24resource_badcfg.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24resource_badname.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24rootScope_infdig.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24rootScope_inprog.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24sanitize_badparse.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24sce_icontext.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24sce_iequirks.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24sce_imatcher.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24sce_insecurl.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24sce_itype.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24sce_iwcard.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\%24sce_unsafe.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\index.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\jqLite_nosel.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\jqLite_offargs.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\jqLite_onargs.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ngModel_nonassign.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ngOptions_iexp.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ngPattern_noregexp.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ngRepeat_dupes.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ngRepeat_iexp.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ngRepeat_iidexp.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ngTransclude_orphan.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ng_areq.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ng_badname.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ng_btstrpd.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ng_cpi.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\error\ng_cpws.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\animations.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\bootstrap.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\compiler.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\concepts.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.e2e-testing.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.mvc.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.mvc.understanding_controller.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.mvc.understanding_model.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.mvc.understanding_view.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.services.%24location.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.services.creating_services.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.services.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.services.injecting_controllers.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.services.managing_dependencies.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.services.testing_services.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.services.understanding_services.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.templates.css-styling.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.templates.databinding.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.templates.filters.creating_filters.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.templates.filters.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.templates.filters.using_filters.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.templates.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\dev_guide.unit-testing.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\di.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\directive.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\expression.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\forms.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\i18n.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\ie.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\index.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\introduction.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\module.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\overview.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\guide\scope.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\misc\contribute.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\misc\downloading.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\misc\faq.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\misc\started.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\index.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_00.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_01.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_02.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_03.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_04.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_05.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_06.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_07.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_08.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_09.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_10.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_11.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\step_12.html" />
+    <Content Include="html\js\vendors\angular\docs\partials\tutorial\the_end.html" />
+    <Content Include="html\js\vendors\angular\docs\robots.txt" />
+    <Content Include="html\js\vendors\angular\docs\sitemap.xml" />
+    <Content Include="html\js\vendors\angular\errors.json" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_af-na.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_af-za.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_af.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_am-et.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_am.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-001.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-ae.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-bh.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-dz.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-eg.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-iq.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-jo.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-kw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-lb.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-ly.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-ma.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-om.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-qa.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-sa.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-sd.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-sy.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-tn.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar-ye.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ar.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_bg-bg.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_bg.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_bn-bd.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_bn-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_bn.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ca-ad.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ca-es.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ca.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_cs-cz.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_cs.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_da-dk.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_da.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_de-at.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_de-be.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_de-ch.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_de-de.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_de-li.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_de-lu.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_de.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_el-cy.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_el-gr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_el.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-as.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-au.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-bb.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-be.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-bm.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-bw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-bz.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-ca.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-dsrt-us.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-dsrt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-fm.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-gb.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-gu.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-gy.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-hk.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-ie.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-iso.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-jm.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-mh.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-mp.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-mt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-mu.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-na.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-nz.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-ph.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-pk.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-pr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-pw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-sg.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-tc.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-tt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-um.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-us.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-vg.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-vi.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-za.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en-zw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_en.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-419.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-ar.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-bo.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-cl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-co.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-cr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-do.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-ea.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-ec.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-es.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-gq.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-gt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-hn.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-ic.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-mx.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-ni.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-pa.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-pe.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-pr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-py.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-sv.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-us.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-uy.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es-ve.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_es.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_et-ee.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_et.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_eu-es.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_eu.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fa-af.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fa-ir.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fa.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fi-fi.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fi.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fil-ph.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fil.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-be.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-bf.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-bi.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-bj.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-bl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-ca.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-cd.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-cf.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-cg.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-ch.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-ci.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-cm.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-dj.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-fr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-ga.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-gf.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-gn.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-gp.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-gq.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-km.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-lu.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-mc.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-mf.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-mg.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-ml.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-mq.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-ne.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-re.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr-yt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_fr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_gl-es.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_gl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_gsw-ch.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_gsw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_gu-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_gu.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_he-il.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_he.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_hi-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_hi.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_hr-hr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_hr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_hu-hu.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_hu.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_id-id.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_id.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_is-is.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_is.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_it-it.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_it-sm.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_it.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_iw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ja-jp.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ja.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_kn-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_kn.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ko-kr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ko.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ln-cd.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ln.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_lt-lt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_lt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_lv-lv.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_lv.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ml-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ml.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_mr-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_mr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ms-my.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ms.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_mt-mt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_mt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_nl-cw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_nl-nl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_nl-sx.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_nl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_no.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_or-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_or.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_pl-pl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_pl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_pt-br.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_pt-pt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_pt.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ro-ro.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ro.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ru-ru.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ru.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sk-sk.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sk.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sl-si.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sq-al.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sq.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sr-cyrl-rs.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sr-latn-rs.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sv-se.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sv.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sw-tz.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_sw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ta-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ta.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_te-in.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_te.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_th-th.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_th.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_tl.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_tr-tr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_tr.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_uk-ua.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_uk.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ur-pk.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_ur.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_vi-vn.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_vi.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_zh-cn.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_zh-hk.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_zh-tw.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_zh.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_zu-za.js" />
+    <Content Include="html\js\vendors\angular\i18n\angular-locale_zu.js" />
+    <Content Include="html\js\vendors\angular\version.json" />
+    <Content Include="html\js\vendors\angular\version.txt" />
+    <Content Include="html\js\vendors\bootstrap\bootstrap.js" />
+    <Content Include="html\js\vendors\bootstrap\bootstrap.min.js" />
+    <Content Include="html\js\services\LoginService.js" />
+    <Content Include="html\views\home.html" />
+    <Content Include="html\views\register.html" />
+    <Content Include="html\views\login.html" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

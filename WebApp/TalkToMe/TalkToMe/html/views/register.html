@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="loginLogo">
+        <img src="/html/img/logo.png" />
+    </div>
+
+    <h1 class="loginPageSlogan">{{ session.localization.loginPageSlogan }}</h1>
+
+    <div class="loginBox">
+        <div class="col-sm-12">
+            <form class="form-horizontal" role="form"  ng-submit="register()">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="email" class="form-control" id="inputFirstName" placeholder="{{ session.localization.firstName }}" ng-model="registerForm.firstName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="email" class="form-control" id="inputLastName" placeholder="{{ session.localization.lastName }}" ng-model="registerForm.lastName">
+                    </div>
+                </div>
+				<div class="form-group">
+                    <div class="col-sm-12">
+						<input type="text" class="form-control" id="inputBirthDate" placeholder="{{ session.localization.birthdate }}" ng-model="registerForm.birthDate">
+                    </div>
+                </div>
+				<div class="form-group">
+                    <div class="col-sm-12">
+						<select class="form-control" id="inputCountry" ng-model="registerForm.country">
+							<option ng-repeat="country in countries" value="{{ country }}"> {{ country }} </option>
+						</select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="{{ session.localization.email }}" ng-model="registerForm.email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="{{ session.localization.password }}" ng-model="registerForm.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control" id="inputPasswordRepeated" placeholder="{{ session.localization.passwordRepeated }}" ng-model="registerForm.passwordRepeated">
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-default btn-primary col-sm-12">{{ session.localization.registerButton }}</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="alert alert-danger" ng-show="loginForm.error">
+                            {{ session.localization.registerError }}
+                        </div>
+                    </div>
+                </div
+            </form>
+        </div>
+    </div>
+<div>
+
+
+
+<div class="bottomOptionsPanel">
+    <div class="pull-right">
+        <label for="languageSelectBox">{{ session.localization.languageSelectBoxLabel }}:</label>
+
+        <select id="languageSelectBox" ng-change="onLanguageChange()" ng-model="selectedLocale">
+            <option ng-repeat="language in session.localization.languages" value="{{ language.code }}"> {{ language.name }} </option>
+        </select>
+    </div>
+</div>
