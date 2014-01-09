@@ -5,17 +5,26 @@
 
     <h1 class="loginPageSlogan">{{ session.localization.loginPageSlogan }}</h1>
 
+	<div class="alert alert-success text-center" ng-show="confirmation=='true'">
+		{{ session.localization.confirmationSuccess }}
+	</div>
+
+	<div class="alert alert-danger text-center" ng-show="confirmation == 'false'">
+		{{ session.localization.confirmationFailure }}
+	</div>
+
+
     <div class="loginBox">
         <div class="col-sm-12">
-            <form class="form-horizontal" role="form"  ng-submit="login()">
+            <form class="form-horizontal validated-form" novalidate role="form" name="logForm" ng-submit="login()">
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="{{ session.localization.email }}" ng-model="loginForm.email">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="{{ session.localization.email }}" ng-model="loginForm.email" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="{{ session.localization.password }}" ng-model="loginForm.password">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="{{ session.localization.password }}" ng-model="loginForm.password" required>
                     </div>
                 </div>
                 <!--div class="form-group">
@@ -29,8 +38,8 @@
                 </div-->
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-default btn-primary col-sm-12">{{ session.localization.loginButton }}</button>
-                        <a ng-href="">{{ session.localization.loginChangePassword }}</a>
+                        <button type="submit" class="btn btn-default btn-primary col-sm-12" ng-disabled="logForm.$invalid || logForm.$pristine">{{ session.localization.loginButton }}</button>
+                        <a ng-href="#/changePassword">{{ session.localization.loginChangePassword }}</a>
                     </div>
                 </div>
                 
@@ -46,18 +55,10 @@
     </div>
 
     <div class="addNewAccount">
-        <a ng-href="#/register/{{ selectedLanguageCode }}"> {{ session.localization.loginAddNewAccount }} </a>
+        <a ng-href="#/register"> {{ session.localization.loginAddNewAccount }} </a>
     </div>
 <div>
 
 
 
-<div class="bottomOptionsPanel">
-    <div class="pull-right">
-        <label for="languageSelectBox">{{ session.localization.languageSelectBoxLabel }}:</label>
-
-        <select id="languageSelectBox" ng-change="onLanguageChange()" ng-model="selectedLocale">
-            <option ng-repeat="language in session.localization.languages" value="{{ language.code }}"> {{ language.name }} </option>
-        </select>
-    </div>
-</div>
+<div ng-include src="'html/views/partials/bottomPanel.html'"></div>

@@ -1,0 +1,65 @@
+<div class="container mainContainer">
+	<div class="col-md-3 mainLeftPanel">
+		<img src="html/img/noProfilePicture.png" class="profilePicture form-control" style="background-color: red" />
+
+		<button class="btn">{{ session.localization.logout }}</button>
+	</div>
+	
+	<div class="col-md-9 mainRightPanel">
+		<label class="fill-x font-size-large">O mnie:</label>
+		<div class="fill-x">
+			<textarea class="form-control" rows="5" placeholder="Npisz coś o sobie..."></textarea>
+		</div>
+
+		<br>
+
+		<label class="fill-x font-size-large">Szukam znajomości z:</label>	
+		<select id="locations" class="multiselect col-md-12" multiple="multiple">
+		</select> 
+
+		<br>
+		<br>
+
+		<label class="fill-x font-size-large">Moje zainteresowania:</label>	
+		<select id="hobbies" class="multiselect col-md-12" multiple="multiple">
+		</select> 
+
+		<br>
+		<br>
+	
+		<label class="fill-x font-size-large">Kontakt:</label>	
+		
+
+		<label class="col-md-3 no-padding profile-label" for="email">E-mail:</label>
+		<div class="col-md-9 no-padding">
+			<input id="email" class="form-control" />
+		</div>
+
+
+		<p class="col-md-11">
+		</p>
+
+
+		<label class="col-md-3 no-padding profile-label" for="telephone">Telefon:</label>
+		<div class="col-md-9 no-padding">
+			<input id="telephone" class="form-control" />
+		</div>
+
+		<p class="col-md-11">
+		</p>
+
+		<label class="col-md-3 no-padding profile-label" for="facebook">Facebook:</label>
+		<div class="col-md-9 no-padding">
+			<input id="facebook" class="form-control" />
+		</div>
+
+		<p class="col-md-11">
+		</p>
+
+		<label class="col-md-3 no-padding profile-label" for="googlep">Google+:</label>
+		<div class="col-md-9 no-padding">
+			<input id="googlep" class="form-control" />
+		</div>
+
+	</div>
+</div>

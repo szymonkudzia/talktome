@@ -1,6 +1,85 @@
 ﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,latin-ext);
 
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+/*************************                VARIABLES                 **********************/
 @OpenSansFont: 'Open Sans', sans-serif;
+
+
+
+/*************************                MIXINS                    **********************/
+.placeholderColor(@color: #ccc) {
+	&::-webkit-input-placeholder {
+        color: @color;
+    }
+    &:-moz-placeholder {
+        color: @color;
+    }
+}
+
+.gradientTopBottom(@topColor, @bottomColor) {
+    background: @topColor;
+    background: -moz-linear-gradient(top,  @topColor 0%, @bottomColor 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@topColor), color-stop(100%,@bottomColor));
+    background: -webkit-linear-gradient(top,  @topColor 0%,@bottomColor 100%);
+    background: -o-linear-gradient(top,  @topColor 0%,@bottomColor 100%);
+    background: -ms-linear-gradient(top,  @topColor 0%,@bottomColor 100%);
+    background: linear-gradient(to bottom,  @topColor 0%,@bottomColor 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@topColor', endColorstr='#1e5799',GradientType=0 );
+}
+
+
+
+/******************** GENERAL CLASSES ****************************/
+.fill-x {
+    width: 100%;
+}
+
+.fill-y {
+    height: 100%;
+}
+
+.font-size-large {
+    font-size: 1.25em;
+}
+
+.container {
+    max-width: 970px;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.inline {
+    display: inline;
+}
+
+.profile-label {
+    font-weight: normal;
+}
+
+.profile-row {
+    margin-bottom: 10px;
+    float:left;
+}
+
+.shadow {
+    box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.25);
+}
+
+/****************** END OF GENERAL CLASSES ***********************/
+
+
+
 
 a {
     cursor: pointer;
@@ -72,36 +151,245 @@ div.addNewAccount {
 
 
 div.bottomOptionsPanel {
-    width: 100%;
+	width: 100%;
 
-    @bottomOptionsPanelHight: 40px;
-    height: @bottomOptionsPanelHight;
-    line-height: @bottomOptionsPanelHight;
 
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	z-index: 100;
 
-    background-color: #efefe3;
-    border-top: 2px solid #dbdbdb;
+	.progress {
+		margin-bottom: 0px;
+		border-radius: 0px;
+		height: 7px;
+	}
 
-    div {
-        vertical-align: middle;
+
+	.bottomOptionsPanelContent {
+		@bottomOptionsPanelHight: 47px;
+		height: @bottomOptionsPanelHight;
+		line-height: @bottomOptionsPanelHight - 7px;
+		background-color: #efefe3;
+		border-top: 2px solid #dbdbdb;
+
+		div {
+			vertical-align: middle;
+		}
+
+
+		label {
+			color: #808080;
+			font-size: 0.9em;
+			font-weight: 300;
+			font-family: @OpenSansFont;
+			margin-right: 10px;
+		}
+
+		select {
+			width: 200px;
+			margin-right: 20px;
+		}
+	}
+}
+
+
+.validated-form .ng-invalid.ng-dirty {
+	background-color: #FA787E;
+	.placeholderColor(#444444);
+}
+    
+
+select.selectPlaceholder {
+	color: #959595;
+}
+
+
+
+
+
+/**************** Top Menu ****************/
+.topMenu {
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    background: crimson;
+    border-bottom: 2px solid black;
+
+    li {
+        margin-bottom: -2px;
+
+        a { 
+            border-radius: 8px 8px 0px 0px;
+            color: white;
+        }
+
+        a:hover, a:focus {
+            background-color: #EB123B;
+            border: 2px solid white;
+            border-bottom-color: transparent;
+        }
+
+        img { 
+            margin-top: -7px;
+            margin-left: 5px;
+        }
     }
 
-
-    label {
-        color: #808080;
-        font-size: 0.9em;
-        font-weight: 300;
-        font-family: @OpenSansFont;
-        margin-right: 10px;
-    }
-
-    select {
-        width: 200px;
-        margin-right: 20px;
+    li.active {
+        a, a:hover, a:focus {
+            border: 2px solid black;
+            border-bottom-color: transparent;
+        }
     }
 }
+
+
+
+/************************  Main Profile Page ***************************/
+
+@mainContainerPadding: 20px;
+@profilePictureWidth: 200px;
+
+.mainContainer {
+    padding-top: 20px;
+}
+
+.mainLeftPanel {
+    display: inline-block;
+    // width: @profilePictureWidth + @mainProfileContainerPadding;
+    //padding-right: @mainProfileContainerPadding;
+    
+    button {
+        margin-top: @mainContainerPadding;
+        width: 100%;
+    }
+}
+
+.mainLeftContainer.well {
+    height: 535px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.mainRightContainer {
+    // position: absolute;
+    // float: right;
+}
+
+.mainRightPanel {
+    display: inline-block;
+}
+
+.profilePicture {
+    width: 205px;
+    height: 200px;
+    border: 2px solid rgb(240, 240, 240);
+    padding: 0px;
+}
+
+
+.multiselect-container.dropdown-menu {
+    width: 100%;
+}
+
+
+
+
+/*********    PersonPicker   ***********/
+.personPickerContainer {
+    height: 60px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.personPickerContainer:hover {
+    // background: rgb(125,185,232);
+    // background: -moz-linear-gradient(top,  rgba(125,185,232,1) 0%, rgba(30,87,153,1) 100%);
+    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,185,232,1)), color-stop(100%,rgba(30,87,153,1)));
+    // background: -webkit-linear-gradient(top,  rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);
+    // background: -o-linear-gradient(top,  rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);
+    // background: -ms-linear-gradient(top,  rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);
+    // background: linear-gradient(to bottom,  rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 );
+
+    .gradientTopBottom(rgb(125,185,232), rgba(30,87,153,1));
+}
+
+
+.personPickerContainerActive div, .personPickerContainerActive .personPickerContainer:hover{
+    // background: rgb(252,193,32);
+    // background: -moz-linear-gradient(top,  rgba(252,193,32,1) 0%, rgba(255,163,50,1) 100%);
+    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,193,32,1)), color-stop(100%,rgba(255,163,50,1)));
+    // background: -webkit-linear-gradient(top,  rgba(252,193,32,1) 0%,rgba(255,163,50,1) 100%);
+    // background: -o-linear-gradient(top,  rgba(252,193,32,1) 0%,rgba(255,163,50,1) 100%);
+    // background: -ms-linear-gradient(top,  rgba(252,193,32,1) 0%,rgba(255,163,50,1) 100%);
+    // background: linear-gradient(to bottom,  rgba(252,193,32,1) 0%,rgba(255,163,50,1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcc120', endColorstr='#ffa332',GradientType=0 );
+
+    .gradientTopBottom(rgba(252,193,32,1), rgba(255,163,50,1));
+
+    cursor: default;
+    .personPickerUnderline {
+        display: none;
+    }
+}
+
+.personPickerUnderline {
+    margin-top: 5px;
+    margin-left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: #E3E3E3;
+}
+
+
+
+.personPickerPicture {
+    height: 50px;
+    width: 50px;
+}
+
+
+/*********    End of PersonPicker ******/
+
+/********** Conversation Box ***************/
+.messageBox {
+    background-color: white;
+    height: 405px;
+    overflow: hidden;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-top: -39px;
+    margin-bottom: 10px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #E4E4E4;
+}
+
+.leftBaloon {
+    float: left;
+    background: #E7E7E7;
+    // .gradientTopBottom(#E7E7E7, #BBBABA);
+    .gradientTopBottom(rgba(252,193,32,1), rgba(255,163,50,1));
+}
+
+.rightBaloon {
+    float: right;
+    background: #B0C9D3;
+    // .gradientTopBottom(#B0C9D3, #567F85);
+    .gradientTopBottom(rgb(125,185,232), rgba(30,87,153,1));
+}
+
+.leftBaloon, .rightBaloon {
+    clear: both;
+    max-width: 75%;
+    border-radius: 10 10;
+    border: 1px solid #ADADAD;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/********** End of Conversation Box ***************/

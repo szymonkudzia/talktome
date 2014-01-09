@@ -14,6 +14,22 @@ class Localization:
             'lastName': '',
             'passwordRepeated': '',
             'registerButton': '',
-			'birthdate': ''
+			'birthdate': '',
+			'confirmationSuccess': '',
+			'confirmationFailure': '',
+			'registrationSuccess': '',
+			'registrationError': '',
+			'serverUnaviable': '',
+			'changePasswordButton': '',
+			'changePasswordInfo': '',
+			'changePasswordCodeGenerationInfo': '',
+			'changePasswordSuccess': '',
+			'changePasswordFailure':'',
+			'codeGenerationSuccess': '',
+			'codeGenerationFailure': '',
+            'topMenuProfile': '',
+            'topMenuFind': '',
+            'topMenuConversation': '',
+            'logout': ''
         }
    

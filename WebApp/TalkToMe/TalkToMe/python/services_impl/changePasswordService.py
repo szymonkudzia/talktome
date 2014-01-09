@@ -10,54 +10,78 @@ from email.mime.text import MIMEText
 from baseService import BaseService
 from python.datamodel.user import User
 from python.datamodel.dao.userDao import UserDao
+from python.datamodel.dao.passwordChangeDao import PasswordChangeDao
 from python.datamodel.dao.localizationDao import LocalizationDao
 
-class RegisterService(BaseService):
+
+class ChangePasswordService(BaseService):
 	def processRequest(self, request):
 		data = request.read()
 		print 'Request data: %s' % data
 
-		user = jsonpickle.decode(data)
+		postData = jsonpickle.decode(data)
 
+		if postData['generateCode']:
+			return self.genereateCode(postData['email'])
+		else:
+			return self.updateUser(postData['code'] , postData['password'])
+
+
+	def genereateCode(self, email):
 		#try:
-		UserDao().insertNew(user)
+		user = UserDao().getByEmail(email)
 
-		user = UserDao().getByEmailAndPassword(user['email'], user['password'])
+		if not user:
+			raise ValueError('Incorect email address!') 
+
 		code = self.code_generator(15) + str(user['id'])
 
-		UserDao().insertToNotConfirmed(user, code)
-
+		PasswordChangeDao().insert(user, code)
+		
 		msg = self.prepareMessage(code, user['country']);
 		subject = self.prepareSubject(user['country']);
 		
-
 		self.sendEmail(user['email'], subject, msg)
-
 		#except:
-			#return '{"error":true}'
+			#return '{"error": true}'
 
 		return '{}'
-		
+
+
+	
+	def updateUser(self, code, password):
+		userId = PasswordChangeDao().getUserIdByCode(code)
+		user = UserDao().getById(userId)
+
+		user['password'] = password
+			
+		UserDao().update(user)
+
+		PasswordChangeDao().deleteCode(code)
+
+		return '{}'
+
+
 	def code_generator(self, size=10, chars=string.ascii_uppercase + string.digits):
 		return ''.join([random.choice(chars) for x in range(size)])
 
 
 	def prepareMessage(self, code, localization):
-		link = "http://localhost:8987/service/confirm?code=" + code 
+		link = "http://localhost:8987/#/changePassword/" + code 
 
-		msg = self.getTranslation('confirmationEmail', localization)
+		msg = self.getTranslation('changePasswordEmail', localization)
 
 		if len(msg) <= 1:
-			msg = self.getTranslation('confirmationEmail', 'en-us')
+			msg = self.getTranslation('changePasswordEmail', 'en-us')
 
 		return msg % link
 
 
 	def prepareSubject(self, localization):
-		subject = self.getTranslation('confirmationEmailSubject', localization)
+		subject = self.getTranslation('changePasswordEmailSubject', localization)
 
 		if len(subject) <= 1:
-			subject = self.getTranslation('confirmationEmailSubject', 'en-us');
+			subject = self.getTranslation('changePasswordEmailSubject', 'en-us');
 
 		return subject
 

@@ -10,7 +10,12 @@
     <InterpreterArguments />
     <DjangoSettingsModule>python.settings</DjangoSettingsModule>
     <WebBrowserUrl />
-    <WebBrowserPort />
+    <WebBrowserPort>8987</WebBrowserPort>
+    <DebugStdLib>False</DebugStdLib>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,6 +42,7 @@
     <Compile Include="manage.py" />
     <Compile Include="python\datamodel\dao\baseDao.py" />
     <Compile Include="python\datamodel\dao\localizationDao.py" />
+    <Compile Include="python\datamodel\dao\passwordChangeDao.py" />
     <Compile Include="python\datamodel\dao\userDao.py" />
     <Compile Include="python\datamodel\dao\__init__.py" />
     <Compile Include="python\datamodel\localization.py" />
@@ -44,6 +50,8 @@
     <Compile Include="python\datamodel\__init__.py" />
     <Compile Include="python\services.py" />
     <Compile Include="python\services_impl\baseService.py" />
+    <Compile Include="python\services_impl\changePasswordService.py" />
+    <Compile Include="python\services_impl\confirmService.py" />
     <Compile Include="python\services_impl\localizationService.py" />
     <Compile Include="python\services_impl\loginService.py" />
     <Compile Include="python\services_impl\registerService.py" />
@@ -74,6 +82,9 @@
     <Folder Include="html\js\" />
     <Folder Include="html\img\" />
     <Folder Include="html\js\controllers\" />
+    <Folder Include="html\js\directives\" />
+    <Folder Include="html\js\directives\decorators\" />
+    <Folder Include="html\js\directives\widgets\" />
     <Folder Include="html\js\services\" />
     <Folder Include="html\js\vendors\" />
     <Folder Include="html\js\vendors\angular\" />
@@ -116,10 +127,15 @@
     <Content Include="html\css\vendors\bootstrap\bootstrap.min.css" />
     <Content Include="html\default.html" />
     <Content Include="html\js\app.js" />
+    <Content Include="html\js\controllers\ChangePasswordCtrl.js" />
     <Content Include="html\js\controllers\LoginCtrl.js" />
+    <Content Include="html\js\directives\decorators\Datepicker.js" />
+    <Content Include="html\js\services\WorkersNotifierService.js" />
+    <Content Include="html\js\services\ChangePasswordService.js" />
     <Content Include="html\js\services\MainService.js" />
     <Content Include="html\js\controllers\RegisterCtrl.js" />
     <Content Include="html\js\services\LocalizationService.js" />
+    <Content Include="html\js\services\RegisterService.js" />
     <Content Include="html\js\vendors\angular\angular-animate.js" />
     <Content Include="html\js\vendors\angular\angular-animate.min.js" />
     <Content Include="html\js\vendors\angular\angular-animate.min.js.map" />
@@ -778,8 +794,15 @@
     <Content Include="html\js\vendors\bootstrap\bootstrap.min.js" />
     <Content Include="html\js\services\LoginService.js" />
     <Content Include="html\views\home.html" />
+    <Content Include="html\views\changePassword.html" />
+    <Content Include="html\views\partials\bottomPanel.html" />
     <Content Include="html\views\register.html" />
     <Content Include="html\views\login.html" />
+    <Content Include="run.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\2.7" />
+    <InterpreterReference Include="{fcc291aa-427c-498c-a4d7-4502d6449b8c}\2.7" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>

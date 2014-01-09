@@ -1,19 +1,41 @@
-﻿talkToMeApp.controller('LoginCtrl', function ($scope, $http, $location, MainService) {
+﻿talkToMeApp.controller('LoginCtrl', function ($scope, $http, $routeParams, $location, MainService, WorkersNotifierService) {
 	$scope.session = MainService.session
+	var Notifier = WorkersNotifierService;
 
-    $scope.loginForm = {
-        error: false
-    };
 
-    $scope.login = function () {
-    	console.log('Sending request to login service');
+	$scope.confirmation = $routeParams.confirmation;
 
-    	MainService.login($scope.loginForm, function () {
-    		$location.path('/home');
-    	});
-    };
 
-    $scope.onLanguageChange = function () {
-    	MainService.changeLocale($scope.selectedLocale);
-    }
+	$scope.loginForm = {
+		error: false
+	};
+
+	$scope.login = function () {
+		console.log('Sending request to login service');
+
+		Notifier.addWorker(
+			worker = function (params, success, failure) {
+				MainService.login(params.loginData, success, failure);
+			},
+			params = { loginData: $scope.loginForm },
+			success = function (data) { // on success
+				console.log('Login succeeded!')
+				$location.path('/main/profile');
+			},
+			failure = function (error) { // on failure
+				console.log('Login failed');
+				$scope.loginForm.error = true;
+			});
+
+
+	};
+
+	$scope.onLanguageChange = function () {
+		MainService.changeLocale($scope.selectedLocale);
+	}
+
+
+	$scope.showLoadingBar = function () {
+		return Notifier.hasActiveWorker();
+	}
 });

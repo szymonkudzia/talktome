@@ -10,6 +10,8 @@
 	};
 
 	this.setLocale = function (locale, successCallback) {
+		if (that.locale === locale) return;
+
 		that.locale = locale;
 
 		this.loadLocalizationData(successCallback);
